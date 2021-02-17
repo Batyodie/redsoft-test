@@ -1,0 +1,13 @@
+.logo-company {
+  &_margin_right {
+    width: 48px;
+    height: 48px;
+    margin-right: 47px;
+  }
+  &__image {
+      max-width: initial;
+  }
+  &__link {
+    text-decoration: none;
+  }
+}

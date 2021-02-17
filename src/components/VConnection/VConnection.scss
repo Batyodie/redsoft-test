@@ -1,0 +1,21 @@
+.connection-blog {
+  max-width: 450px;
+  width: 100%;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+  &__image-icon {
+    margin-right: 5px;
+  }
+  &__link {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+}

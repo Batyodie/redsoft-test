@@ -1,0 +1,45 @@
+.btn {
+  background-color: #403432;
+  border-radius: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  height: 48px;
+  &_size_d {
+    width: 100%;
+    min-width: 122px;
+  }
+  &_size_buy {
+    width: 100%;
+    min-width: 112px;
+    max-width: 118px;
+  }
+  &:hover {
+    background-color: #776763;
+  }
+  &__icon {
+    margin: 3px;
+  }
+  &__body {
+    font-weight: 700px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #f4f6f9;
+  }
+  &_disable {
+    background-color: #c1b4b1;
+    cursor: initial;
+    outline: none;
+    transition: initial;
+    &:hover {
+      background-color: #c1b4b1;
+    }
+  }
+  &_buy_color {
+    background-color: #382e2b;
+  }
+}

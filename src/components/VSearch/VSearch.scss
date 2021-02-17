@@ -1,0 +1,24 @@
+.search-form {
+  display: flex;
+  &__input {
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-right: 0;
+    width: 100%;
+    min-width: 294px;
+    max-height: 48px;
+    outline: none;
+    padding: 15px;
+    &:active,
+    &:focus {
+      border: 1px solid #b5b5b5;
+      border-right: 0;
+      transition: border ease-in-out;
+    }
+    &::placeholder {
+      color: #9f9f9f;
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+}
