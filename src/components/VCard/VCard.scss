@@ -2,6 +2,8 @@
   position: relative;
   &__link {
     text-decoration: none;
+    max-height: 330px;
+    cursor: pointer;
   }
   &__card {
     max-width: 280px;

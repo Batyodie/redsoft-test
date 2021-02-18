@@ -9,7 +9,9 @@
           :src="tel"
           alt="phone icon"
         />
-        <a href="#" class="connection-blog__link"> +7 (495) 555-55-55</a>
+        <a href="tel:+74955555555" class="connection-blog__link">
+          +7 (495) 555-55-55</a
+        >
       </li>
       <li class="connection-blog__item">
         <img
@@ -28,9 +30,7 @@
 </template>
 
 <script>
-// import { adress, tel } from "@/assets";
-import adress from "@/assets/adress.svg";
-import tel from "@/assets/tel-icon.svg";
+import { adress, tel } from "@/assets/";
 export default {
   name: "VConnection",
   data() {

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import logo from "@/assets/logo.png";
+import { logo } from "@/assets/";
 export default {
   name: "VLogo",
   data() {

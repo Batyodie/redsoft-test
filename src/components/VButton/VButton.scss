@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 12px;
+  padding: 5px;
   border: 0;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -25,21 +25,28 @@
     margin: 3px;
   }
   &__body {
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 14px;
     line-height: 21px;
     color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_buy_color {
+    background-color: #382e2b;
+  }
+  &_buyed_color {
+    background-color: #5b3a32;
   }
   &_disable {
     background-color: #c1b4b1;
     cursor: initial;
     outline: none;
     transition: initial;
+    pointer-events: none;
     &:hover {
       background-color: #c1b4b1;
     }
-  }
-  &_buy_color {
-    background-color: #382e2b;
   }
 }

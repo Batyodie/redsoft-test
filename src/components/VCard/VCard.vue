@@ -3,7 +3,6 @@
     :class="{
       'galery-card_disabled': painting.sold
     }"
-    href="#"
     class="galery-card galery-card__link"
   >
     <article class="galery-card__card">
@@ -25,7 +24,12 @@
           </h2>
         </div>
         <template v-if="painting.sold !== true">
-          <div class="galery-card__pay-menu">
+          <div
+            :style="{
+              cursor: loaded ? 'initial' : ''
+            }"
+            class="galery-card__pay-menu"
+          >
             <div class="galery-card__price">
               <span
                 v-if="painting.oldPrice"
@@ -39,8 +43,20 @@
                 {{ painting.currentPrice }} $
               </span>
             </div>
-            <VButton class="btn_buy_color btn_size_buy">
-              <template slot="btn-body">
+            <VButton
+              :loader="painting.added"
+              :cardID="painting.id"
+              @buy-product="GetAddToCart"
+              :class="{
+                btn_buyed_color: painting.added
+              }"
+              class="btn_buy_color btn_size_buy"
+            >
+              <template v-if="painting.added" v-slot:btn-body>
+                <img class="btn__icon" :src="icon" alt="check icon" />
+                В корзине
+              </template>
+              <template v-else v-slot:btn-body>
                 Купить
               </template>
             </VButton>
@@ -63,8 +79,8 @@
 <script>
 import VButton from "../VButton/VButton.vue";
 
-import galeryImage from "@/assets/galery-1.png";
-
+import { mapActions } from "vuex";
+import { checkIcon } from "@/assets/";
 export default {
   props: {
     painting: {
@@ -76,8 +92,25 @@ export default {
   components: { VButton },
   data() {
     return {
-      icon: galeryImage
+      icon: checkIcon,
+      isLoading: false,
+      loaded: this.painting.added
     };
+  },
+  methods: {
+    ...mapActions({
+      update: "updateToCart"
+    }),
+    GetAddToCart() {
+      const id = this.painting.id;
+      this.loaded = !this.loaded;
+      this.isLoading = !this.painting.added;
+      const payload = {
+        id,
+        data: this.isLoading
+      };
+      this.update(payload);
+    }
   }
 };
 </script>
